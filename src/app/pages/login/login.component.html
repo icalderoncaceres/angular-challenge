@@ -1,1 +1,24 @@
-<p>login works!</p>
+<mat-card>
+    <mat-card-title>LOGIN</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="loginForm">
+            <p>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email" placeholder="Email">
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" placeholder="Password">
+                </mat-form-field>
+            </p>
+            
+            <button mat-raised-button color="primary">Sign In</button>
+            
+            <div *ngFor="let err of errors" class="error">{{err}}</div>
+        </form>
+
+    </mat-card-content>
+</mat-card>

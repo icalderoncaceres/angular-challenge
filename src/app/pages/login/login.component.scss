@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+  mat-card {
+    max-width: 400px;
+    min-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-form-field {
+    display: block;
+    min-width: 380px;
+  }
+  .mat-form-field {
+    width: 100%;
+    min-width: 400px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .error {
+    padding: 5px;
+    border-radius: 3%;
+    width: 380px;
+    color: white;
+    background-color: red;
+    margin-top: 10px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
