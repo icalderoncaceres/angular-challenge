@@ -1,0 +1,22 @@
+
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#container-list {
+    width: 100;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    
+}
+
+.fill-remaining-space {
+    flex: 1 auto;
+}
