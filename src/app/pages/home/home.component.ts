@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from 'src/app/common/models/userModel.model';
-import { UserService } from 'src/app/common/services/user/user.service';
+import { IPost } from 'src/app/common/models/postModel.model';
+import { PostService } from 'src/app/common/services/post/post.service';
 import { AuthService } from 'src/app/common/services/auth/auth.service';
 import { Observable, of } from 'rxjs';
 
@@ -10,16 +10,16 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  list: IUser[] = [];
+  list: IPost[] = [];
   currentUser: string = '';
-  users$: Observable<IUser[]> = of([]);
+  posts$: Observable<IPost[]> = of([]);
   constructor(
-    private userService: UserService,
+    private postService: PostService,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.users$ = this.userService.get();
+    this.posts$ = this.postService.get();
     
     this.currentUser = this.authService.get();
   }
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.authService.signUp();
   }
 
-  userById(index: number, user: IUser) {
-    return user.id
+  postById(index: number, post: IPost) {
+    return post.id
   }
 }

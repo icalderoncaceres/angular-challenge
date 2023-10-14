@@ -1,5 +1,5 @@
 
-export interface IUser {
+export interface IPost {
     userId: number
     id: number
     title: string
