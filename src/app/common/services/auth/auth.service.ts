@@ -23,4 +23,9 @@ export class AuthService {
     localStorage.removeItem("user");
     document.location.href = 'login';
   }
+
+  get() {
+    const user = localStorage.getItem("user");
+    return user ? user : 'Not Authenticated'
+  }
 }

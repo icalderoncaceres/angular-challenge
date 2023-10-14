@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/common/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
   list: IUser[] = [];
+  currentUser: string = '';
   constructor(
     private userService: UserService,
     private authService: AuthService
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.userService.get()
       .subscribe((users: IUser[]) => this.list = users);
+    
+    this.currentUser = this.authService.get();
   }
 
   signUp() {

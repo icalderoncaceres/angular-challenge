@@ -1,0 +1,19 @@
+
+mat-card {
+    margin: 5px;
+    // TODO: alto de la tarjeta auto
+    min-height: 280px;
+    max-height: 280PX;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+mat-card-title {
+    padding: 0px 5px;
+    text-align: center;
+}

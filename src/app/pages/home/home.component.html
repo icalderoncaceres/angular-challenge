@@ -2,15 +2,9 @@
     <span>Angular challenge</span>
     <span class="fill-remaining-space"></span>
     <span>
-        <button mat-button (click)="signUp()">Sign out</button>
+        {{currentUser}} <button mat-button (click)="signUp()">Sign out</button>
     </span>
 </mat-toolbar>
 <section id="container-list">
-    <mat-card *ngFor="let user of list;let i as index">
-        <mat-card-title>ID: {{user.id}} / USER_ID: {{user.userId}}</mat-card-title>
-        <mat-card-title>{{user.title}}</mat-card-title>
-        <mat-card-content>
-            {{user.body}}
-        </mat-card-content>
-    </mat-card>
+    <app-user-card *ngFor="let user of list;let i as index" [user]="user"></app-user-card>
 </section>
