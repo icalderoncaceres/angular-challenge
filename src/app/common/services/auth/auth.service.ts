@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ILogin, ISiginResponse } from 'src/app/common/models/loginModel.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   signIn(login: ILogin): ISiginResponse {
     if (login.email === 'blockedUser@mail.com') {
@@ -14,14 +17,16 @@ export class AuthService {
         status: 401
       }
     }
+    localStorage.setItem('user',login.email);
+    this.router.navigate(['']);
     return {
       status: 200
     }
   }
 
-  signUp() {
+  signOut() {
     localStorage.removeItem("user");
-    document.location.href = 'login';
+    this.router.navigate(['login'])
   }
 
   get() {

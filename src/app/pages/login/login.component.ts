@@ -20,10 +20,7 @@ export class LoginComponent {
   ) {}
 
   onSubmit() {
-    console.log(this.loginForm.value);
     this.errors = [];
-
-
     if (!this.loginForm.valid) {
       return;
     }
@@ -37,8 +34,6 @@ export class LoginComponent {
       this.errors = ['User or password incorrect'];
       return;
     }
-
-    localStorage.setItem("user", this.loginForm.value.email || '');
-    location.href = '/';
+    
   }
 }

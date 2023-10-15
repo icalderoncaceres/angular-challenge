@@ -2,9 +2,9 @@
     <span>Angular challenge</span>
     <span class="fill-remaining-space"></span>
     <span>
-        {{currentUser}} <button mat-button (click)="signUp()">Sign out</button>
+        {{currentUser}} <button mat-button (click)="signOut()">Sign out</button>
     </span>
 </mat-toolbar>
-<section id="container-list">
+<section id="container-list" *ngIf="(posts$ | async)">
     <app-post-card *ngFor="let post of (posts$ | async);let i as index;trackBy:postById" [post]="post"></app-post-card>
 </section>

@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
     this.currentUser = this.authService.get();
   }
 
-  signUp() {
-    this.authService.signUp();
+  signOut() {
+    this.authService.signOut();
   }
 
   postById(index: number, post: IPost) {
